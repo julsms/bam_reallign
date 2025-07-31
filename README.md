@@ -46,7 +46,7 @@ Use Cases
 
 This pipeline is ideal for:
 
-   _ Preparing BAM files for variant calling
-    _Improving alignment quality around indels
+    Preparing BAM files for variant calling
+    Improving alignment quality around indels
     Processing whole-genome sequencing data
-    Following HPRC best practices for pangenome analysis__
+    Following HPRC best practices for pangenome analysis
