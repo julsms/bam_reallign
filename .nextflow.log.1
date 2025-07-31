@@ -1,0 +1,515 @@
+Jul-28 23:40:07.491 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf --input_bam /home/iulia/PPR/hg002/hg002_chr_named.bam --reference_fasta /home/iulia/reference/GRCh38_no_alt_analysis_set.fasta --genome_file /home/iulia/reference/genome.chr.sizes --outdir /home/iulia/PPR/hg002/results_realignment -resume
+Jul-28 23:40:07.833 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.6
+Jul-28 23:40:07.936 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/iulia/.nextflow/plugins; core-plugins: nf-amazon@2.15.0,nf-azure@1.16.0,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.1,nf-k8s@1.0.0,nf-tower@1.11.4,nf-wave@1.12.1
+Jul-28 23:40:07.988 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jul-28 23:40:07.990 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jul-28 23:40:07.997 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Jul-28 23:40:08.025 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jul-28 23:40:08.090 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/iulia/pangenome_realignment/nextflow.config
+Jul-28 23:40:08.096 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/iulia/pangenome_realignment/nextflow.config
+Jul-28 23:40:08.171 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/iulia/.nextflow/secrets/store.json
+Jul-28 23:40:08.179 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@3eb631b8] - activable => nextflow.secret.LocalSecretsProvider@3eb631b8
+Jul-28 23:40:08.210 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jul-28 23:40:10.350 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Jul-28 23:40:10.385 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [festering_bose] DSL2 - revision: c0821af8ae
+Jul-28 23:40:10.390 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jul-28 23:40:10.393 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-wave@1.12.1]
+Jul-28 23:40:10.396 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-wave version: 1.12.1
+Jul-28 23:40:10.420 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-wave@1.12.1' resolved
+Jul-28 23:40:10.421 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-wave@1.12.1'
+Jul-28 23:40:10.459 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-wave@1.12.1
+Jul-28 23:40:10.576 [main] DEBUG nextflow.Session - Session UUID: 4697e269-95ec-4400-b452-d45c61a375f9
+Jul-28 23:40:10.577 [main] DEBUG nextflow.Session - Run name: festering_bose
+Jul-28 23:40:10.578 [main] DEBUG nextflow.Session - Executor pool size: 128
+Jul-28 23:40:10.593 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jul-28 23:40:10.603 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Jul-28 23:40:10.650 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.04.6 build 5954
+  Created: 01-07-2025 11:27 UTC (14:27 EEST)
+  System: Linux 6.8.0-64-generic
+  Runtime: Groovy 4.0.26 on OpenJDK 64-Bit Server VM 17.0.11-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 3718695@iuliavm [10.252.254.165]
+  CPUs: 128 - Mem: 503.7 GB (26.2 GB) - Swap: 0 (0)
+Jul-28 23:40:10.772 [main] DEBUG nextflow.Session - Work-dir: /home/iulia/pangenome_realignment/work [ext2/ext3]
+Jul-28 23:40:10.773 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/iulia/pangenome_realignment/bin
+Jul-28 23:40:10.792 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jul-28 23:40:10.809 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jul-28 23:40:10.845 [main] DEBUG nextflow.Session - Observer factory: WaveFactory
+Jul-28 23:40:10.848 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Jul-28 23:40:10.895 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jul-28 23:40:10.907 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 129; maxThreads: 1000
+Jul-28 23:40:11.064 [main] DEBUG nextflow.Session - Session start
+Jul-28 23:40:11.071 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/iulia/PPR/hg002/results_realignment/pipeline_info/execution_trace.txt
+Jul-28 23:40:11.268 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul-28 23:40:12.835 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:SPLIT_BAM` matches process REALIGNMENT:SPLIT_BAM
+Jul-28 23:40:12.871 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-28 23:40:12.872 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-28 23:40:12.885 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jul-28 23:40:12.902 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=105; memory=450 GB; capacity=128; pollInterval=100ms; dumpInterval=5m
+Jul-28 23:40:12.909 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jul-28 23:40:12.967 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'REALIGNMENT:SPLIT_BAM': maxForks=1; fair=false; array=0
+Jul-28 23:40:13.202 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:ADD_READ_GROUPS` matches process REALIGNMENT:ADD_READ_GROUPS
+Jul-28 23:40:13.220 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-28 23:40:13.220 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-28 23:40:13.225 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'REALIGNMENT:ADD_READ_GROUPS': maxForks=25; fair=false; array=0
+Jul-28 23:40:13.265 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:BAMLEFTALIGN` matches process REALIGNMENT:BAMLEFTALIGN
+Jul-28 23:40:13.269 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-28 23:40:13.270 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-28 23:40:13.274 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'REALIGNMENT:BAMLEFTALIGN': maxForks=25; fair=false; array=0
+Jul-28 23:40:13.296 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:REALIGNER_TARGET_CREATOR` matches process REALIGNMENT:REALIGNER_TARGET_CREATOR
+Jul-28 23:40:13.300 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-28 23:40:13.300 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-28 23:40:13.303 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'REALIGNMENT:REALIGNER_TARGET_CREATOR': maxForks=25; fair=false; array=0
+Jul-28 23:40:13.323 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:EXPAND_REGIONS` matches process REALIGNMENT:EXPAND_REGIONS
+Jul-28 23:40:13.328 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-28 23:40:13.329 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-28 23:40:13.331 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'REALIGNMENT:EXPAND_REGIONS': maxForks=25; fair=false; array=0
+Jul-28 23:40:13.373 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:ABRA_REALIGNMENT` matches process REALIGNMENT:ABRA_REALIGNMENT
+Jul-28 23:40:13.378 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-28 23:40:13.378 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-28 23:40:13.380 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'REALIGNMENT:ABRA_REALIGNMENT': maxForks=6; fair=false; array=0
+Jul-28 23:40:13.409 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MERGE_BAM` matches process REALIGNMENT:MERGE_BAM
+Jul-28 23:40:13.414 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-28 23:40:13.416 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-28 23:40:13.418 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'REALIGNMENT:MERGE_BAM': maxForks=1; fair=false; array=0
+Jul-28 23:40:13.427 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: MERGE_BAM, ADD_READ_GROUPS, BAMLEFTALIGN, SPLIT_BAM, REALIGNMENT:ABRA_REALIGNMENT, REALIGNER_TARGET_CREATOR, REALIGNMENT:BAMLEFTALIGN, REALIGNMENT:EXPAND_REGIONS, REALIGNMENT:MERGE_BAM, EXPAND_REGIONS, REALIGNMENT:SPLIT_BAM, ABRA_REALIGNMENT, REALIGNMENT:ADD_READ_GROUPS, REALIGNMENT:REALIGNER_TARGET_CREATOR
+Jul-28 23:40:13.437 [main] DEBUG nextflow.Session - Igniting dataflow network (13)
+Jul-28 23:40:13.457 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > REALIGNMENT:SPLIT_BAM
+Jul-28 23:40:13.459 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > REALIGNMENT:ADD_READ_GROUPS
+Jul-28 23:40:13.460 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > REALIGNMENT:BAMLEFTALIGN
+Jul-28 23:40:13.460 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > REALIGNMENT:REALIGNER_TARGET_CREATOR
+Jul-28 23:40:13.461 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > REALIGNMENT:EXPAND_REGIONS
+Jul-28 23:40:13.462 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > REALIGNMENT:ABRA_REALIGNMENT
+Jul-28 23:40:13.463 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > REALIGNMENT:MERGE_BAM
+Jul-28 23:40:13.464 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_4c4ccd8f764f6001: /home/iulia/pangenome_realignment/modules/abra_realignment.nf
+  Script_99b76d258be9a0b5: /home/iulia/pangenome_realignment/modules/add_read_groups.nf
+  Script_80e635a90651aff9: /home/iulia/pangenome_realignment/main.nf
+  Script_3398e60937dfe229: /home/iulia/pangenome_realignment/modules/expand_regions.nf
+  Script_1d6aac8da697cb36: /home/iulia/pangenome_realignment/modules/merge_bam.nf
+  Script_3bffa3621f3b57c4: /home/iulia/pangenome_realignment/modules/realigner_target_creator.nf
+  Script_5b0cb582e1321e79: /home/iulia/pangenome_realignment/modules/bamleftalign.nf
+  Script_37fa641dee2014b8: /home/iulia/pangenome_realignment/modules/split_bam.nf
+  Script_3cbeb1f7cc9fabbe: /home/iulia/pangenome_realignment/workflows/realignment.nf
+Jul-28 23:40:13.470 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jul-28 23:40:13.471 [main] DEBUG nextflow.Session - Session await
+Jul-28 23:40:13.662 [Actor Thread 38] DEBUG nextflow.conda.CondaCache - conda found local env for environment=bioconda::samtools=1.3.1; path=/home/iulia/pangenome_realignment/work/conda/env-a1d2122b71a3e3ee03363d7507d6574e
+Jul-28 23:40:13.863 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [b8/cc6bdf] Cached process > REALIGNMENT:SPLIT_BAM (1)
+Jul-28 23:40:14.040 [Actor Thread 75] DEBUG nextflow.conda.CondaCache - conda found local env for environment=bioconda::picard=2.23.0; path=/home/iulia/pangenome_realignment/work/conda/env-d3b01a7c0692279b34b3cfed87d23a4f
+Jul-28 23:40:14.040 [Actor Thread 36] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Jul-28 23:40:14.097 [Actor Thread 64] INFO  nextflow.processor.TaskProcessor - [73/f82b51] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr19)
+Jul-28 23:40:14.097 [Actor Thread 73] INFO  nextflow.processor.TaskProcessor - [3c/37b213] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr4)
+Jul-28 23:40:14.097 [Actor Thread 84] INFO  nextflow.processor.TaskProcessor - [a8/ef205b] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr9)
+Jul-28 23:40:14.097 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [b5/64a247] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr18)
+Jul-28 23:40:14.097 [Actor Thread 60] INFO  nextflow.processor.TaskProcessor - [2b/65530f] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr17)
+Jul-28 23:40:14.097 [Actor Thread 66] INFO  nextflow.processor.TaskProcessor - [df/d97903] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr2)
+Jul-28 23:40:14.098 [Actor Thread 80] INFO  nextflow.processor.TaskProcessor - [ba/ef1a28] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr7)
+Jul-28 23:40:14.097 [Actor Thread 70] INFO  nextflow.processor.TaskProcessor - [cb/6cb4b5] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr22)
+Jul-28 23:40:14.097 [Actor Thread 86] INFO  nextflow.processor.TaskProcessor - [fc/1523dc] Cached process > REALIGNMENT:ADD_READ_GROUPS (chrX)
+Jul-28 23:40:14.098 [Actor Thread 55] INFO  nextflow.processor.TaskProcessor - [e4/959b98] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr14)
+Jul-28 23:40:14.097 [Actor Thread 69] INFO  nextflow.processor.TaskProcessor - [3a/0192af] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr21)
+Jul-28 23:40:14.097 [Actor Thread 48] INFO  nextflow.processor.TaskProcessor - [e2/19a2a1] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr10)
+Jul-28 23:40:14.099 [Actor Thread 78] INFO  nextflow.processor.TaskProcessor - [70/976532] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr6)
+Jul-28 23:40:14.099 [Actor Thread 53] INFO  nextflow.processor.TaskProcessor - [3a/76c96a] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr13)
+Jul-28 23:40:14.097 [Actor Thread 50] INFO  nextflow.processor.TaskProcessor - [92/57b2fe] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr11)
+Jul-28 23:40:14.097 [Actor Thread 51] INFO  nextflow.processor.TaskProcessor - [eb/78a6b7] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr12)
+Jul-28 23:40:14.098 [Actor Thread 88] INFO  nextflow.processor.TaskProcessor - [c9/801b98] Cached process > REALIGNMENT:ADD_READ_GROUPS (chrY)
+Jul-28 23:40:14.098 [Actor Thread 76] INFO  nextflow.processor.TaskProcessor - [4e/f5d4ba] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr5)
+Jul-28 23:40:14.099 [Actor Thread 57] INFO  nextflow.processor.TaskProcessor - [01/29fbbb] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr15)
+Jul-28 23:40:14.099 [Actor Thread 82] INFO  nextflow.processor.TaskProcessor - [40/9e54f7] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr8)
+Jul-28 23:40:14.099 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [d0/f58265] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr16)
+Jul-28 23:40:14.099 [Actor Thread 71] INFO  nextflow.processor.TaskProcessor - [01/786bcd] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr3)
+Jul-28 23:40:14.099 [Actor Thread 46] INFO  nextflow.processor.TaskProcessor - [bb/5664aa] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr1)
+Jul-28 23:40:14.099 [Actor Thread 68] INFO  nextflow.processor.TaskProcessor - [2c/b698c3] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr20)
+Jul-28 23:40:14.163 [Actor Thread 129] DEBUG nextflow.conda.CondaCache - conda found local env for environment=bioconda::gatk=3.8 bioconda::samtools=1.15.1; path=/home/iulia/pangenome_realignment/work/conda/env-faf9a1dc23420bbaeb92878fdd51d387
+Jul-28 23:40:14.188 [Actor Thread 112] INFO  nextflow.processor.TaskProcessor - [59/814d5d] Cached process > REALIGNMENT:BAMLEFTALIGN (chrY)
+Jul-28 23:40:14.188 [Actor Thread 103] INFO  nextflow.processor.TaskProcessor - [e2/d796b8] Cached process > REALIGNMENT:BAMLEFTALIGN (chr17)
+Jul-28 23:40:14.201 [Actor Thread 114] INFO  nextflow.processor.TaskProcessor - [20/83338a] Cached process > REALIGNMENT:BAMLEFTALIGN (chr20)
+Jul-28 23:40:14.201 [Actor Thread 108] INFO  nextflow.processor.TaskProcessor - [c0/aae557] Cached process > REALIGNMENT:BAMLEFTALIGN (chr3)
+Jul-28 23:40:14.224 [Actor Thread 120] INFO  nextflow.processor.TaskProcessor - [d1/db24fb] Cached process > REALIGNMENT:BAMLEFTALIGN (chrX)
+Jul-28 23:40:14.224 [Actor Thread 106] INFO  nextflow.processor.TaskProcessor - [09/e1f6ac] Cached process > REALIGNMENT:BAMLEFTALIGN (chr2)
+Jul-28 23:40:14.226 [Actor Thread 118] INFO  nextflow.processor.TaskProcessor - [cd/187cfa] Cached process > REALIGNMENT:BAMLEFTALIGN (chr1)
+Jul-28 23:40:14.238 [Actor Thread 73] INFO  nextflow.processor.TaskProcessor - [6a/d2e5d4] Cached process > REALIGNMENT:BAMLEFTALIGN (chr16)
+Jul-28 23:40:14.238 [Actor Thread 126] INFO  nextflow.processor.TaskProcessor - [65/a4d5e4] Cached process > REALIGNMENT:BAMLEFTALIGN (chr8)
+Jul-28 23:40:14.240 [Actor Thread 127] INFO  nextflow.processor.TaskProcessor - [87/2feb80] Cached process > REALIGNMENT:BAMLEFTALIGN (chr4)
+Jul-28 23:40:14.240 [Actor Thread 124] INFO  nextflow.processor.TaskProcessor - [bc/9f4bac] Cached process > REALIGNMENT:BAMLEFTALIGN (chr10)
+Jul-28 23:40:14.240 [Actor Thread 125] INFO  nextflow.processor.TaskProcessor - [de/f53ce3] Cached process > REALIGNMENT:BAMLEFTALIGN (chr18)
+Jul-28 23:40:14.242 [Actor Thread 128] INFO  nextflow.processor.TaskProcessor - [b8/eb99dc] Cached process > REALIGNMENT:BAMLEFTALIGN (chr11)
+Jul-28 23:40:14.245 [Actor Thread 84] INFO  nextflow.processor.TaskProcessor - [7e/2da4ef] Cached process > REALIGNMENT:BAMLEFTALIGN (chr5)
+Jul-28 23:40:14.249 [Actor Thread 48] INFO  nextflow.processor.TaskProcessor - [8d/534e1d] Cached process > REALIGNMENT:BAMLEFTALIGN (chr9)
+Jul-28 23:40:14.249 [Actor Thread 82] INFO  nextflow.processor.TaskProcessor - [df/6020db] Cached process > REALIGNMENT:BAMLEFTALIGN (chr6)
+Jul-28 23:40:14.250 [Actor Thread 57] INFO  nextflow.processor.TaskProcessor - [fb/c4b34b] Cached process > REALIGNMENT:BAMLEFTALIGN (chr21)
+Jul-28 23:40:14.250 [Actor Thread 122] INFO  nextflow.processor.TaskProcessor - [e5/fbe3c9] Cached process > REALIGNMENT:BAMLEFTALIGN (chr15)
+Jul-28 23:40:14.246 [Actor Thread 129] INFO  nextflow.processor.TaskProcessor - [5e/833306] Cached process > REALIGNMENT:BAMLEFTALIGN (chr13)
+Jul-28 23:40:14.252 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [fa/c0d3b2] Cached process > REALIGNMENT:BAMLEFTALIGN (chr19)
+Jul-28 23:40:14.260 [Actor Thread 121] INFO  nextflow.processor.TaskProcessor - [46/e35680] Cached process > REALIGNMENT:BAMLEFTALIGN (chr12)
+Jul-28 23:40:14.269 [Actor Thread 64] INFO  nextflow.processor.TaskProcessor - [95/85b8f2] Cached process > REALIGNMENT:BAMLEFTALIGN (chr7)
+Jul-28 23:40:14.274 [Actor Thread 80] INFO  nextflow.processor.TaskProcessor - [5c/064b11] Cached process > REALIGNMENT:BAMLEFTALIGN (chr14)
+Jul-28 23:40:14.287 [Actor Thread 124] DEBUG nextflow.conda.CondaCache - conda found local env for environment=bioconda::gatk=3.8; path=/home/iulia/pangenome_realignment/work/conda/env-1c6f1c4c9f63693bc0705e74469e1e59
+Jul-28 23:40:14.293 [Actor Thread 51] INFO  nextflow.processor.TaskProcessor - [21/a4a08d] Cached process > REALIGNMENT:BAMLEFTALIGN (chr22)
+Jul-28 23:40:14.312 [Actor Thread 108] INFO  nextflow.processor.TaskProcessor - [0b/239415] Cached process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chrY)
+Jul-28 23:40:14.335 [Actor Thread 124] INFO  nextflow.processor.TaskProcessor - [3f/d030ac] Cached process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr21)
+Jul-28 23:40:14.360 [Actor Thread 84] INFO  nextflow.processor.TaskProcessor - [b0/74d8ac] Cached process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr22)
+Jul-28 23:40:14.392 [Actor Thread 96] DEBUG nextflow.conda.CondaCache - conda found local env for environment=bioconda::bedtools=2.30.0; path=/home/iulia/pangenome_realignment/work/conda/env-8dafdac3843d8f8edf2f9907029bda58
+Jul-28 23:40:14.401 [Actor Thread 108] INFO  nextflow.processor.TaskProcessor - [32/e8ec70] Cached process > REALIGNMENT:EXPAND_REGIONS (chr21)
+Jul-28 23:40:14.401 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [7a/bf837e] Cached process > REALIGNMENT:EXPAND_REGIONS (chrY)
+Jul-28 23:40:14.401 [Actor Thread 51] INFO  nextflow.processor.TaskProcessor - [c3/01ac7e] Cached process > REALIGNMENT:EXPAND_REGIONS (chr22)
+Jul-28 23:40:14.443 [Actor Thread 73] DEBUG i.s.wave.plugin.config.WaveConfig - Wave strategy not specified - using default: [container, dockerfile, conda]
+Jul-28 23:40:14.446 [Actor Thread 124] DEBUG nextflow.conda.CondaCache - conda found local env for environment=bioconda::abra2=2.23; path=/home/iulia/pangenome_realignment/work/conda/env-1cb2654b7fac4ecf1d3bfbbd26bc135a
+Jul-28 23:40:14.462 [Actor Thread 73] DEBUG io.seqera.wave.plugin.WaveClient - Wave config: WaveConfig(enabled:true, endpoint:https://wave.seqera.io, containerConfigUrl:[], tokensCacheMaxDuration:30m, condaOpts:CondaOpts(mambaImage=mambaorg/micromamba:1.5.10-noble; basePackages=conda-forge::procps-ng, commands=null), strategy:[container, dockerfile, conda], bundleProjectResources:null, buildRepository:null, cacheRepository:null, retryOpts:RetryOpts(delay:450ms, maxDelay:1m 30s, maxAttempts:10, jitter:0.25), httpClientOpts:HttpOpts(), freezeMode:true, preserveFileTimestamp:null, buildMaxDuration:40m, mirrorMode:null, scanMode:null, scanAllowedLevels:null)
+Jul-28 23:40:14.851 [Actor Thread 73] DEBUG io.seqera.wave.plugin.WaveClient - Request limiter blocked PT0.002S
+Jul-28 23:40:14.871 [Actor Thread 73] DEBUG io.seqera.wave.plugin.WaveClient - Wave request: https://wave.seqera.io/v1alpha2/container; attempt=1 - request: SubmitContainerTokenRequest(towerAccessToken:null, towerRefreshToken:null, towerWorkspaceId:null, towerEndpoint:https://api.cloud.seqera.io, containerImage:null, containerFile:null, containerConfig:ContainerConfig(), condaFile:null, containerPlatform:linux/amd64, buildRepository:null, cacheRepository:null, timestamp:2025-07-28T23:40:14.849369671+03:00, fingerprint:2b1dc98456fd883cb086cfc6f0b18c5b, freeze:true, format:null, dryRun:false, workflowId:null, containerIncludes:null, packages:PackagesSpec{type=CONDA, envFile='null', packages=[bioconda::gatk=3.8], condaOpts=CondaOpts(mambaImage=mambaorg/micromamba:1.5.10-noble; basePackages=conda-forge::procps-ng, commands=null), channels=conda-forge,bioconda,defaults}, nameStrategy:null, mirror:false, scanMode:null, scanLevels:null)
+Jul-28 23:40:15.639 [Actor Thread 73] DEBUG io.seqera.wave.plugin.WaveClient - Wave response: statusCode=200; body={"requestId":"7befff0b43ff","targetImage":"community.wave.seqera.io/library/gatk:3.8--65d36f2f828b1c98","containerImage":"community.wave.seqera.io/library/gatk:3.8--65d36f2f828b1c98","buildId":"bd-65d36f2f828b1c98_1","cached":true,"freeze":true,"mirror":false,"scanId":"sc-0c8da12307074131_1"}
+Jul-28 23:40:15.866 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:15.963 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:15.972 [Task submitter] INFO  nextflow.Session - [7d/1f125c] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr7)
+Jul-28 23:40:15.999 [Actor Thread 69] DEBUG io.seqera.wave.plugin.WaveClient - Wave request: https://wave.seqera.io/v1alpha2/container; attempt=1 - request: SubmitContainerTokenRequest(towerAccessToken:null, towerRefreshToken:null, towerWorkspaceId:null, towerEndpoint:https://api.cloud.seqera.io, containerImage:null, containerFile:null, containerConfig:ContainerConfig(), condaFile:null, containerPlatform:linux/amd64, buildRepository:null, cacheRepository:null, timestamp:2025-07-28T23:40:15.998131571+03:00, fingerprint:acedf340f8d615ed81dce7f7aac13cfe, freeze:true, format:null, dryRun:false, workflowId:null, containerIncludes:null, packages:PackagesSpec{type=CONDA, envFile='null', packages=[bioconda::abra2=2.23], condaOpts=CondaOpts(mambaImage=mambaorg/micromamba:1.5.10-noble; basePackages=conda-forge::procps-ng, commands=null), channels=conda-forge,bioconda,defaults}, nameStrategy:null, mirror:false, scanMode:null, scanLevels:null)
+Jul-28 23:40:16.145 [Actor Thread 69] DEBUG io.seqera.wave.plugin.WaveClient - Wave response: statusCode=200; body={"requestId":"ac04fa8b63e3","targetImage":"community.wave.seqera.io/library/abra2:2.23--06650172a6b280ae","containerImage":"community.wave.seqera.io/library/abra2:2.23--06650172a6b280ae","buildId":"bd-06650172a6b280ae_1","cached":true,"freeze":true,"mirror":false,"scanId":"sc-857a1384fce2ee34_1"}
+Jul-28 23:40:16.160 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:16.188 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:16.190 [Task submitter] INFO  nextflow.Session - [a3/efc100] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr6)
+Jul-28 23:40:16.238 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:16.257 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:16.259 [Task submitter] INFO  nextflow.Session - [ac/bc9e5d] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr9)
+Jul-28 23:40:16.314 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:16.329 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:16.331 [Task submitter] INFO  nextflow.Session - [0a/06aacf] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr16)
+Jul-28 23:40:16.384 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:16.399 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:16.400 [Task submitter] INFO  nextflow.Session - [9b/11e5d2] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr12)
+Jul-28 23:40:16.455 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:16.469 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:16.471 [Task submitter] INFO  nextflow.Session - [38/c7f0cb] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr8)
+Jul-28 23:40:16.520 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:16.535 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:16.538 [Task submitter] INFO  nextflow.Session - [6f/4f55b6] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr2)
+Jul-28 23:40:16.589 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:16.600 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:16.601 [Task submitter] INFO  nextflow.Session - [23/935323] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chrX)
+Jul-28 23:40:16.648 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:16.660 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:16.661 [Task submitter] INFO  nextflow.Session - [6b/9c5548] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr10)
+Jul-28 23:40:16.712 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:16.723 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:16.724 [Task submitter] INFO  nextflow.Session - [0b/4927bd] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr17)
+Jul-28 23:40:16.774 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:16.785 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:16.786 [Task submitter] INFO  nextflow.Session - [e9/7bf3e6] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr11)
+Jul-28 23:40:16.835 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:16.871 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:16.873 [Task submitter] INFO  nextflow.Session - [00/a2b84c] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr4)
+Jul-28 23:40:16.926 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:16.942 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:16.944 [Task submitter] INFO  nextflow.Session - [db/255728] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr5)
+Jul-28 23:40:16.995 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:17.010 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:17.012 [Task submitter] INFO  nextflow.Session - [98/75cb3e] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr20)
+Jul-28 23:40:17.063 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:17.077 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:17.080 [Task submitter] INFO  nextflow.Session - [db/d2c675] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr13)
+Jul-28 23:40:17.132 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:17.150 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:17.152 [Task submitter] INFO  nextflow.Session - [48/e0ff4c] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr14)
+Jul-28 23:40:17.203 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:17.225 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:17.231 [Task submitter] INFO  nextflow.Session - [db/8e353d] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr19)
+Jul-28 23:40:17.292 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:17.304 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:17.306 [Task submitter] INFO  nextflow.Session - [63/d7b155] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr3)
+Jul-28 23:40:17.356 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:17.381 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:17.383 [Task submitter] INFO  nextflow.Session - [dc/b3ecd8] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr15)
+Jul-28 23:40:17.434 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:17.463 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:17.465 [Task submitter] INFO  nextflow.Session - [7d/70571e] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr1)
+Jul-28 23:40:17.518 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"7befff0b43ff","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 23:40:17.541 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:17.543 [Task submitter] INFO  nextflow.Session - [46/bbfff2] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr18)
+Jul-28 23:40:17.595 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:17.620 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:17.624 [Task submitter] INFO  nextflow.Session - [0a/137fd0] Submitted process > REALIGNMENT:ABRA_REALIGNMENT (chr22)
+Jul-28 23:40:17.677 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:17.727 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:17.776 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:17.827 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:18.890 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:18.937 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:19.986 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:20.039 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:21.101 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:21.156 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:22.225 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:22.289 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:23.348 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:23.399 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 71; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr9); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/ac/bc9e5d6eab6a4578fa4693d1b0406a]
+Jul-28 23:40:23.402 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:23.404 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Jul-28 23:40:23.430 [TaskFinalizer-1] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr9); work-dir=/home/iulia/pangenome_realignment/work/ac/bc9e5d6eab6a4578fa4693d1b0406a
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr9)` terminated with an error exit status (1)
+Jul-28 23:40:23.462 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:23.493 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 23:40:23.506 [Task submitter] INFO  nextflow.Session - [c3/55e977] Submitted process > REALIGNMENT:ABRA_REALIGNMENT (chrY)
+Jul-28 23:40:23.562 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:23.570 [TaskFinalizer-1] ERROR nextflow.processor.TaskProcessor - Error executing process > 'REALIGNMENT:REALIGNER_TARGET_CREATOR (chr9)'
+
+Caused by:
+  Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr9)` terminated with an error exit status (1)
+
+
+Command executed:
+
+  echo "=== REALIGNER_TARGET_CREATOR for chr9 ==="
+  
+  # Find realignment targets with GATK
+  java -Xmx10g -jar $CONDA_PREFIX/opt/gatk-3.8/GenomeAnalysisTK.jar \
+      -T RealignerTargetCreator \
+      -R GRCh38_no_alt_analysis_set.fasta \
+      -I chr9.leftaligned.bam \
+      -o chr9.intervals
+  
+  # Convert intervals to BED format with proper error handling
+  if [ -s chr9.intervals ]; then
+      echo "Converting intervals to BED format..."
+  
+      # Convert GATK intervals to BED format, handling single positions properly
+      while read line; do
+          if [[ $line == *":"* ]]; then
+              # Extract chromosome
+              CHR=$(echo $line | cut -d':' -f1)
+  
+              # Extract coordinates
+              COORDS=$(echo $line | cut -d':' -f2)
+  
+              if [[ $COORDS == *"-"* ]]; then
+                  # Range format: start-end
+                  START=$(echo $COORDS | cut -d'-' -f1)
+                  END=$(echo $COORDS | cut -d'-' -f2)
+                  # Convert to 0-based for BED
+                  START=$((START - 1))
+  
+                  # Only output if we have valid coordinates
+                  if [[ $START =~ ^[0-9]+$ ]] && [[ $END =~ ^[0-9]+$ ]]; then
+                      echo -e "$CHR\t$START\t$END"
+                  fi
+              else
+                  # Single position - make it a 1bp interval
+                  if [[ $COORDS =~ ^[0-9]+$ ]]; then
+                      START=$((COORDS - 1))
+                      END=$COORDS
+                      echo -e "$CHR\t$START\t$END"
+                  fi
+              fi
+          fi
+      done < chr9.intervals > chr9.bed.tmp
+  
+      # Filter out any lines that don't have exactly 3 columns
+      awk 'NF==3 {print}' chr9.bed.tmp > chr9.bed
+      rm chr9.bed.tmp
+  
+      echo "BED file created with $(wc -l < chr9.bed) valid intervals"
+  
+      # Show first few lines for verification
+      if [ -s chr9.bed ]; then
+          echo "First few intervals:"
+          head -5 chr9.bed
+      fi
+  else
+      echo "No intervals found, creating empty BED file"
+      touch chr9.bed
+  fi
+  
+  # Final verification
+  if [ -s chr9.bed ]; then
+      # Check that all lines have 3 columns
+      BAD_LINES=$(awk 'NF!=3 {print NR}' chr9.bed | wc -l)
+      if [ $BAD_LINES -gt 0 ]; then
+          echo "WARNING: Found $BAD_LINES malformed lines, filtering them out"
+          awk 'NF==3 {print}' chr9.bed > chr9.bed.clean
+          mv chr9.bed.clean chr9.bed
+      fi
+      echo "Final BED file has $(wc -l < chr9.bed) valid intervals"
+  fi
+
+Command exit status:
+  1
+
+Command output:
+  === REALIGNER_TARGET_CREATOR for chr9 ===
+
+Command error:
+  === REALIGNER_TARGET_CREATOR for chr9 ===
+  ##### ERROR ------------------------------------------------------------------------------------------
+  ##### ERROR A USER ERROR has occurred (version 3.8-1-0-gf15c1c3ef): 
+  ##### ERROR
+  ##### ERROR This means that one or more arguments or inputs in your command are incorrect.
+  ##### ERROR The error message below tells you what is the problem.
+  ##### ERROR
+  ##### ERROR If the problem is an invalid argument, please check the online documentation guide
+  ##### ERROR (or rerun your command with --help) to view allowable command-line arguments for this tool.
+  ##### ERROR
+  ##### ERROR Visit our website and forum for extensive documentation and answers to 
+  ##### ERROR commonly asked questions https://software.broadinstitute.org/gatk
+  ##### ERROR
+  ##### ERROR Please do NOT post this error to the GATK forum unless you have really tried to fix it yourself.
+  ##### ERROR
+  ##### ERROR MESSAGE: Invalid command line: Malformed walker argument: Could not find walker with name: RealignerTargetCreator
+  ##### ERROR ------------------------------------------------------------------------------------------
+
+Work dir:
+  /home/iulia/pangenome_realignment/work/ac/bc9e5d6eab6a4578fa4693d1b0406a
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+Jul-28 23:40:23.585 [TaskFinalizer-1] INFO  nextflow.Session - Execution cancelled -- Finishing pending tasks before exit
+Jul-28 23:40:23.596 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jul-28 23:40:23.611 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ac04fa8b63e3","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 23:40:23.731 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 64; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr7); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/7d/1f125c6d67b81aba5bb0fbb0578bfb]
+Jul-28 23:40:23.737 [TaskFinalizer-2] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr7); work-dir=/home/iulia/pangenome_realignment/work/7d/1f125c6d67b81aba5bb0fbb0578bfb
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr7)` terminated with an error exit status (1)
+Jul-28 23:40:23.880 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 52; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr2); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/6f/4f55b6dfdd3b07218292a170da5c4e]
+Jul-28 23:40:23.896 [TaskFinalizer-3] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr2); work-dir=/home/iulia/pangenome_realignment/work/6f/4f55b6dfdd3b07218292a170da5c4e
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr2)` terminated with an error exit status (1)
+Jul-28 23:40:23.939 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 60; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr12); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/9b/11e5d20293fc616de39b691a453f84]
+Jul-28 23:40:23.945 [TaskFinalizer-4] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr12); work-dir=/home/iulia/pangenome_realignment/work/9b/11e5d20293fc616de39b691a453f84
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr12)` terminated with an error exit status (1)
+Jul-28 23:40:24.356 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 57; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr11); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/e9/7bf3e6df035173f857f10c1d6344a4]
+Jul-28 23:40:24.363 [TaskFinalizer-5] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr11); work-dir=/home/iulia/pangenome_realignment/work/e9/7bf3e6df035173f857f10c1d6344a4
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr11)` terminated with an error exit status (1)
+Jul-28 23:40:24.388 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 69; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr6); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/a3/efc100a7bfb19f421c6663f788ac35]
+Jul-28 23:40:24.395 [TaskFinalizer-6] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr6); work-dir=/home/iulia/pangenome_realignment/work/a3/efc100a7bfb19f421c6663f788ac35
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr6)` terminated with an error exit status (1)
+Jul-28 23:40:24.424 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 62; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr16); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/06aacf4f3ddba425ebda5d66f609c7]
+Jul-28 23:40:24.429 [TaskFinalizer-7] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr16); work-dir=/home/iulia/pangenome_realignment/work/0a/06aacf4f3ddba425ebda5d66f609c7
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr16)` terminated with an error exit status (1)
+Jul-28 23:40:24.471 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 59; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr10); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/6b/9c55481e9769f6c5df7ab82b717b83]
+Jul-28 23:40:24.488 [TaskFinalizer-8] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr10); work-dir=/home/iulia/pangenome_realignment/work/6b/9c55481e9769f6c5df7ab82b717b83
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr10)` terminated with an error exit status (1)
+Jul-28 23:40:24.501 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 54; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr20); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/98/75cb3ecc243f3d3a735d3cb71e84a8]
+Jul-28 23:40:24.505 [TaskFinalizer-9] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr20); work-dir=/home/iulia/pangenome_realignment/work/98/75cb3ecc243f3d3a735d3cb71e84a8
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr20)` terminated with an error exit status (1)
+Jul-28 23:40:24.535 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 48; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chrX); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/23/9353231f9d39b2d66002219092f18c]
+Jul-28 23:40:24.540 [TaskFinalizer-10] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chrX); work-dir=/home/iulia/pangenome_realignment/work/23/9353231f9d39b2d66002219092f18c
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chrX)` terminated with an error exit status (1)
+Jul-28 23:40:24.636 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 63; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr8); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/38/c7f0cb79de4a43dc697f9a755c146a]
+Jul-28 23:40:24.641 [TaskFinalizer-1] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr8); work-dir=/home/iulia/pangenome_realignment/work/38/c7f0cb79de4a43dc697f9a755c146a
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr8)` terminated with an error exit status (1)
+Jul-28 23:40:24.718 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 55; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr17); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/0b/4927bd5ff5bb37e8cbb30b516aca11]
+Jul-28 23:40:24.727 [TaskFinalizer-2] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr17); work-dir=/home/iulia/pangenome_realignment/work/0b/4927bd5ff5bb37e8cbb30b516aca11
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr17)` terminated with an error exit status (1)
+Jul-28 23:40:24.762 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 70; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr5); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/db/2557285f51e3954bf1f1c4979cd9d3]
+Jul-28 23:40:24.767 [TaskFinalizer-3] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr5); work-dir=/home/iulia/pangenome_realignment/work/db/2557285f51e3954bf1f1c4979cd9d3
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr5)` terminated with an error exit status (1)
+Jul-28 23:40:24.811 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 61; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr4); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/00/a2b84c62d09ee039d9e71882666ad4]
+Jul-28 23:40:24.820 [TaskFinalizer-4] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr4); work-dir=/home/iulia/pangenome_realignment/work/00/a2b84c62d09ee039d9e71882666ad4
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr4)` terminated with an error exit status (1)
+Jul-28 23:40:24.922 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 66; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr13); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/db/d2c67599f9ea5829302cd484835ea5]
+Jul-28 23:40:24.931 [TaskFinalizer-5] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr13); work-dir=/home/iulia/pangenome_realignment/work/db/d2c67599f9ea5829302cd484835ea5
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr13)` terminated with an error exit status (1)
+Jul-28 23:40:24.952 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 72; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr14); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/48/e0ff4c0b9179dbadccaabcff3e5852]
+Jul-28 23:40:24.956 [TaskFinalizer-6] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr14); work-dir=/home/iulia/pangenome_realignment/work/48/e0ff4c0b9179dbadccaabcff3e5852
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr14)` terminated with an error exit status (1)
+Jul-28 23:40:25.024 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 51; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr1); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/7d/70571ed281e311b7a5937ebe22992b]
+Jul-28 23:40:25.033 [TaskFinalizer-7] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr1); work-dir=/home/iulia/pangenome_realignment/work/7d/70571ed281e311b7a5937ebe22992b
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr1)` terminated with an error exit status (1)
+Jul-28 23:40:25.067 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 65; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr19); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/db/8e353d78179b004a2df4bfd1c85d8e]
+Jul-28 23:40:25.073 [TaskFinalizer-8] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr19); work-dir=/home/iulia/pangenome_realignment/work/db/8e353d78179b004a2df4bfd1c85d8e
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr19)` terminated with an error exit status (1)
+Jul-28 23:40:25.159 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 58; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr18); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/46/bbfff2941ad040bc88d01b0c99e523]
+Jul-28 23:40:25.170 [TaskFinalizer-9] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr18); work-dir=/home/iulia/pangenome_realignment/work/46/bbfff2941ad040bc88d01b0c99e523
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr18)` terminated with an error exit status (1)
+Jul-28 23:40:25.228 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 53; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr3); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/63/d7b155d9933e886f18a5c7aafb7c95]
+Jul-28 23:40:25.233 [TaskFinalizer-10] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr3); work-dir=/home/iulia/pangenome_realignment/work/63/d7b155d9933e886f18a5c7aafb7c95
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr3)` terminated with an error exit status (1)
+Jul-28 23:40:25.520 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 67; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr15); status: COMPLETED; exit: 1; error: -; workDir: /home/iulia/pangenome_realignment/work/dc/b3ecd82e2ef1d2c62c87bec99919a5]
+Jul-28 23:40:25.527 [TaskFinalizer-1] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:REALIGNER_TARGET_CREATOR (chr15); work-dir=/home/iulia/pangenome_realignment/work/dc/b3ecd82e2ef1d2c62c87bec99919a5
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:REALIGNER_TARGET_CREATOR (chr15)` terminated with an error exit status (1)
+Jul-28 23:45:13.112 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 78; name: REALIGNMENT:ABRA_REALIGNMENT (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/137fd0e63d192d5928b0e432f417bf]
+~> TaskHandler[id: 79; name: REALIGNMENT:ABRA_REALIGNMENT (chrY); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/c3/55e9779e5070fd7f2ed46a1a5a8921]
+Jul-28 23:45:18.665 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 77; name: REALIGNMENT:ABRA_REALIGNMENT (chr21); status: NEW; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/55/69b04d9404d183e33ea6f882385e59]
+Jul-28 23:50:13.147 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 78; name: REALIGNMENT:ABRA_REALIGNMENT (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/137fd0e63d192d5928b0e432f417bf]
+~> TaskHandler[id: 79; name: REALIGNMENT:ABRA_REALIGNMENT (chrY); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/c3/55e9779e5070fd7f2ed46a1a5a8921]
+Jul-28 23:50:18.801 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 77; name: REALIGNMENT:ABRA_REALIGNMENT (chr21); status: NEW; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/55/69b04d9404d183e33ea6f882385e59]
+Jul-28 23:53:32.544 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 79; name: REALIGNMENT:ABRA_REALIGNMENT (chrY); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/c3/55e9779e5070fd7f2ed46a1a5a8921]
+Jul-28 23:55:13.156 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 78; name: REALIGNMENT:ABRA_REALIGNMENT (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/137fd0e63d192d5928b0e432f417bf]
+Jul-28 23:55:19.573 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 77; name: REALIGNMENT:ABRA_REALIGNMENT (chr21); status: NEW; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/55/69b04d9404d183e33ea6f882385e59]
+Jul-29 00:00:13.212 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 78; name: REALIGNMENT:ABRA_REALIGNMENT (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/137fd0e63d192d5928b0e432f417bf]
+Jul-29 00:00:19.655 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 77; name: REALIGNMENT:ABRA_REALIGNMENT (chr21); status: NEW; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/55/69b04d9404d183e33ea6f882385e59]
+Jul-29 00:05:13.282 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 78; name: REALIGNMENT:ABRA_REALIGNMENT (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/137fd0e63d192d5928b0e432f417bf]
+Jul-29 00:05:19.736 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 77; name: REALIGNMENT:ABRA_REALIGNMENT (chr21); status: NEW; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/55/69b04d9404d183e33ea6f882385e59]
+Jul-29 00:10:13.296 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 78; name: REALIGNMENT:ABRA_REALIGNMENT (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/137fd0e63d192d5928b0e432f417bf]
+Jul-29 00:10:19.836 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 77; name: REALIGNMENT:ABRA_REALIGNMENT (chr21); status: NEW; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/55/69b04d9404d183e33ea6f882385e59]
+Jul-29 00:15:13.317 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 78; name: REALIGNMENT:ABRA_REALIGNMENT (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/137fd0e63d192d5928b0e432f417bf]
+Jul-29 00:15:19.928 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 77; name: REALIGNMENT:ABRA_REALIGNMENT (chr21); status: NEW; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/55/69b04d9404d183e33ea6f882385e59]
+Jul-29 00:20:13.391 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 78; name: REALIGNMENT:ABRA_REALIGNMENT (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/137fd0e63d192d5928b0e432f417bf]
+Jul-29 00:20:20.003 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 77; name: REALIGNMENT:ABRA_REALIGNMENT (chr21); status: NEW; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/55/69b04d9404d183e33ea6f882385e59]
+Jul-29 00:25:13.409 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 78; name: REALIGNMENT:ABRA_REALIGNMENT (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/137fd0e63d192d5928b0e432f417bf]
+Jul-29 00:25:20.087 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 77; name: REALIGNMENT:ABRA_REALIGNMENT (chr21); status: NEW; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/55/69b04d9404d183e33ea6f882385e59]
+Jul-29 00:30:13.478 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 78; name: REALIGNMENT:ABRA_REALIGNMENT (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/137fd0e63d192d5928b0e432f417bf]
+Jul-29 00:30:20.165 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 77; name: REALIGNMENT:ABRA_REALIGNMENT (chr21); status: NEW; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/55/69b04d9404d183e33ea6f882385e59]
+Jul-29 00:35:13.547 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 78; name: REALIGNMENT:ABRA_REALIGNMENT (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/137fd0e63d192d5928b0e432f417bf]
+Jul-29 00:35:20.237 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 77; name: REALIGNMENT:ABRA_REALIGNMENT (chr21); status: NEW; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/55/69b04d9404d183e33ea6f882385e59]
+Jul-29 00:40:13.593 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 78; name: REALIGNMENT:ABRA_REALIGNMENT (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/137fd0e63d192d5928b0e432f417bf]
+Jul-29 00:40:20.309 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 77; name: REALIGNMENT:ABRA_REALIGNMENT (chr21); status: NEW; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/55/69b04d9404d183e33ea6f882385e59]
+Jul-29 00:45:13.660 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 78; name: REALIGNMENT:ABRA_REALIGNMENT (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/137fd0e63d192d5928b0e432f417bf]
+Jul-29 00:45:20.382 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 77; name: REALIGNMENT:ABRA_REALIGNMENT (chr21); status: NEW; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/55/69b04d9404d183e33ea6f882385e59]
+Jul-29 00:49:06.812 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 78; name: REALIGNMENT:ABRA_REALIGNMENT (chr22); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/0a/137fd0e63d192d5928b0e432f417bf]
+Jul-29 00:49:06.816 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jul-29 00:49:06.817 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jul-29 00:49:06.829 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+Jul-29 00:49:07.529 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Jul-29 00:49:07.542 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=2; failedCount=21; ignoredCount=0; cachedCount=55; pendingCount=1; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=23h 11m 54s; failedDuration=5m 25s; cachedDuration=2d 4h 4m 54s;loadCpus=0; loadMemory=0; peakRunning=23; peakCpus=76; peakMemory=465 GB; ]
+Jul-29 00:49:07.543 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Jul-29 00:49:07.545 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Jul-29 00:49:08.697 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Jul-29 00:49:09.095 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jul-29 00:49:09.128 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-wave@1.12.1'
+Jul-29 00:49:09.128 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-wave
+Jul-29 00:49:09.130 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Jul-29 00:49:09.131 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

@@ -1,0 +1,579 @@
+Jul-28 07:08:04.874 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf --input_bam /home/iulia/PPR/hg002/hg002_chr_named.bam --reference_fasta /home/iulia/reference/GRCh38_no_alt_analysis_set.fasta --genome_file /home/iulia/reference/genome.chr.sizes --outdir /home/iulia/PPR/hg002/results_realignment -resume
+Jul-28 07:08:05.102 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.6
+Jul-28 07:08:05.136 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/iulia/.nextflow/plugins; core-plugins: nf-amazon@2.15.0,nf-azure@1.16.0,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.1,nf-k8s@1.0.0,nf-tower@1.11.4,nf-wave@1.12.1
+Jul-28 07:08:05.170 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jul-28 07:08:05.172 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jul-28 07:08:05.176 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Jul-28 07:08:05.203 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jul-28 07:08:05.273 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/iulia/pangenome_realignment/nextflow.config
+Jul-28 07:08:05.282 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/iulia/pangenome_realignment/nextflow.config
+Jul-28 07:08:05.352 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/iulia/.nextflow/secrets/store.json
+Jul-28 07:08:05.358 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@3eb631b8] - activable => nextflow.secret.LocalSecretsProvider@3eb631b8
+Jul-28 07:08:05.377 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jul-28 07:08:06.909 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Jul-28 07:08:06.933 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [maniac_ardinghelli] DSL2 - revision: c0821af8ae
+Jul-28 07:08:06.936 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jul-28 07:08:06.938 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-wave@1.12.1]
+Jul-28 07:08:06.941 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-wave version: 1.12.1
+Jul-28 07:08:06.962 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-wave@1.12.1' resolved
+Jul-28 07:08:06.963 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-wave@1.12.1'
+Jul-28 07:08:06.996 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-wave@1.12.1
+Jul-28 07:08:07.113 [main] DEBUG nextflow.Session - Session UUID: 4697e269-95ec-4400-b452-d45c61a375f9
+Jul-28 07:08:07.114 [main] DEBUG nextflow.Session - Run name: maniac_ardinghelli
+Jul-28 07:08:07.115 [main] DEBUG nextflow.Session - Executor pool size: 128
+Jul-28 07:08:07.129 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jul-28 07:08:07.139 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Jul-28 07:08:07.178 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.04.6 build 5954
+  Created: 01-07-2025 11:27 UTC (14:27 EEST)
+  System: Linux 6.8.0-64-generic
+  Runtime: Groovy 4.0.26 on OpenJDK 64-Bit Server VM 17.0.11-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 4136643@iuliavm [10.252.254.165]
+  CPUs: 128 - Mem: 503.7 GB (289.6 GB) - Swap: 0 (0)
+Jul-28 07:08:07.302 [main] DEBUG nextflow.Session - Work-dir: /home/iulia/pangenome_realignment/work [ext2/ext3]
+Jul-28 07:08:07.303 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/iulia/pangenome_realignment/bin
+Jul-28 07:08:07.323 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jul-28 07:08:07.343 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jul-28 07:08:07.391 [main] DEBUG nextflow.Session - Observer factory: WaveFactory
+Jul-28 07:08:07.395 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Jul-28 07:08:07.453 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jul-28 07:08:07.471 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 129; maxThreads: 1000
+Jul-28 07:08:07.627 [main] DEBUG nextflow.Session - Session start
+Jul-28 07:08:07.635 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/iulia/PPR/hg002/results_realignment/pipeline_info/execution_trace.txt
+Jul-28 07:08:07.871 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul-28 07:08:09.025 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:SPLIT_BAM` matches process REALIGNMENT:SPLIT_BAM
+Jul-28 07:08:09.048 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-28 07:08:09.049 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-28 07:08:09.060 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jul-28 07:08:09.072 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=105; memory=450 GB; capacity=128; pollInterval=100ms; dumpInterval=5m
+Jul-28 07:08:09.077 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jul-28 07:08:09.125 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'REALIGNMENT:SPLIT_BAM': maxForks=1; fair=false; array=0
+Jul-28 07:08:09.288 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:ADD_READ_GROUPS` matches process REALIGNMENT:ADD_READ_GROUPS
+Jul-28 07:08:09.301 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-28 07:08:09.301 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-28 07:08:09.305 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'REALIGNMENT:ADD_READ_GROUPS': maxForks=25; fair=false; array=0
+Jul-28 07:08:09.338 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:BAMLEFTALIGN` matches process REALIGNMENT:BAMLEFTALIGN
+Jul-28 07:08:09.342 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-28 07:08:09.342 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-28 07:08:09.348 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'REALIGNMENT:BAMLEFTALIGN': maxForks=25; fair=false; array=0
+Jul-28 07:08:09.371 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:REALIGNER_TARGET_CREATOR` matches process REALIGNMENT:REALIGNER_TARGET_CREATOR
+Jul-28 07:08:09.375 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-28 07:08:09.375 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-28 07:08:09.377 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'REALIGNMENT:REALIGNER_TARGET_CREATOR': maxForks=25; fair=false; array=0
+Jul-28 07:08:09.395 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:EXPAND_REGIONS` matches process REALIGNMENT:EXPAND_REGIONS
+Jul-28 07:08:09.400 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-28 07:08:09.400 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-28 07:08:09.402 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'REALIGNMENT:EXPAND_REGIONS': maxForks=25; fair=false; array=0
+Jul-28 07:08:09.438 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:ABRA_REALIGNMENT` matches process REALIGNMENT:ABRA_REALIGNMENT
+Jul-28 07:08:09.444 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-28 07:08:09.444 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-28 07:08:09.445 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'REALIGNMENT:ABRA_REALIGNMENT': maxForks=6; fair=false; array=0
+Jul-28 07:08:09.468 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MERGE_BAM` matches process REALIGNMENT:MERGE_BAM
+Jul-28 07:08:09.472 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-28 07:08:09.472 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-28 07:08:09.474 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'REALIGNMENT:MERGE_BAM': maxForks=1; fair=false; array=0
+Jul-28 07:08:09.481 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: MERGE_BAM, ADD_READ_GROUPS, BAMLEFTALIGN, SPLIT_BAM, REALIGNMENT:ABRA_REALIGNMENT, REALIGNER_TARGET_CREATOR, REALIGNMENT:BAMLEFTALIGN, REALIGNMENT:EXPAND_REGIONS, REALIGNMENT:MERGE_BAM, EXPAND_REGIONS, REALIGNMENT:SPLIT_BAM, ABRA_REALIGNMENT, REALIGNMENT:ADD_READ_GROUPS, REALIGNMENT:REALIGNER_TARGET_CREATOR
+Jul-28 07:08:09.490 [main] DEBUG nextflow.Session - Igniting dataflow network (13)
+Jul-28 07:08:09.504 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > REALIGNMENT:SPLIT_BAM
+Jul-28 07:08:09.505 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > REALIGNMENT:ADD_READ_GROUPS
+Jul-28 07:08:09.506 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > REALIGNMENT:BAMLEFTALIGN
+Jul-28 07:08:09.508 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > REALIGNMENT:REALIGNER_TARGET_CREATOR
+Jul-28 07:08:09.508 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > REALIGNMENT:EXPAND_REGIONS
+Jul-28 07:08:09.509 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > REALIGNMENT:ABRA_REALIGNMENT
+Jul-28 07:08:09.510 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > REALIGNMENT:MERGE_BAM
+Jul-28 07:08:09.512 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_80e635a90651aff9: /home/iulia/pangenome_realignment/main.nf
+  Script_99b76d258be9a0b5: /home/iulia/pangenome_realignment/modules/add_read_groups.nf
+  Script_3398e60937dfe229: /home/iulia/pangenome_realignment/modules/expand_regions.nf
+  Script_1d6aac8da697cb36: /home/iulia/pangenome_realignment/modules/merge_bam.nf
+  Script_3bffa3621f3b57c4: /home/iulia/pangenome_realignment/modules/realigner_target_creator.nf
+  Script_5b0cb582e1321e79: /home/iulia/pangenome_realignment/modules/bamleftalign.nf
+  Script_37fa641dee2014b8: /home/iulia/pangenome_realignment/modules/split_bam.nf
+  Script_3cbeb1f7cc9fabbe: /home/iulia/pangenome_realignment/workflows/realignment.nf
+  Script_bfa89bfe1364d76f: /home/iulia/pangenome_realignment/modules/abra_realignment.nf
+Jul-28 07:08:09.513 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jul-28 07:08:09.513 [main] DEBUG nextflow.Session - Session await
+Jul-28 07:08:09.695 [Actor Thread 40] DEBUG nextflow.conda.CondaCache - conda found local env for environment=bioconda::samtools=1.3.1; path=/home/iulia/pangenome_realignment/work/conda/env-a1d2122b71a3e3ee03363d7507d6574e
+Jul-28 07:08:09.908 [Actor Thread 38] INFO  nextflow.processor.TaskProcessor - [b8/cc6bdf] Cached process > REALIGNMENT:SPLIT_BAM (1)
+Jul-28 07:08:09.996 [Actor Thread 38] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Jul-28 07:08:10.002 [Actor Thread 82] DEBUG nextflow.conda.CondaCache - conda found local env for environment=bioconda::picard=2.23.0; path=/home/iulia/pangenome_realignment/work/conda/env-d3b01a7c0692279b34b3cfed87d23a4f
+Jul-28 07:08:10.067 [Actor Thread 68] INFO  nextflow.processor.TaskProcessor - [df/d97903] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr2)
+Jul-28 07:08:10.067 [Actor Thread 64] INFO  nextflow.processor.TaskProcessor - [b5/64a247] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr18)
+Jul-28 07:08:10.067 [Actor Thread 77] INFO  nextflow.processor.TaskProcessor - [3c/37b213] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr4)
+Jul-28 07:08:10.068 [Actor Thread 90] INFO  nextflow.processor.TaskProcessor - [fc/1523dc] Cached process > REALIGNMENT:ADD_READ_GROUPS (chrX)
+Jul-28 07:08:10.068 [Actor Thread 53] INFO  nextflow.processor.TaskProcessor - [eb/78a6b7] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr12)
+Jul-28 07:08:10.067 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [01/29fbbb] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr15)
+Jul-28 07:08:10.069 [Actor Thread 88] INFO  nextflow.processor.TaskProcessor - [a8/ef205b] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr9)
+Jul-28 07:08:10.067 [Actor Thread 81] INFO  nextflow.processor.TaskProcessor - [70/976532] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr6)
+Jul-28 07:08:10.067 [Actor Thread 55] INFO  nextflow.processor.TaskProcessor - [3a/76c96a] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr13)
+Jul-28 07:08:10.067 [Actor Thread 60] INFO  nextflow.processor.TaskProcessor - [d0/f58265] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr16)
+Jul-28 07:08:10.067 [Actor Thread 70] INFO  nextflow.processor.TaskProcessor - [2c/b698c3] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr20)
+Jul-28 07:08:10.067 [Actor Thread 48] INFO  nextflow.processor.TaskProcessor - [bb/5664aa] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr1)
+Jul-28 07:08:10.067 [Actor Thread 92] INFO  nextflow.processor.TaskProcessor - [c9/801b98] Cached process > REALIGNMENT:ADD_READ_GROUPS (chrY)
+Jul-28 07:08:10.071 [Actor Thread 72] INFO  nextflow.processor.TaskProcessor - [3a/0192af] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr21)
+Jul-28 07:08:10.071 [Actor Thread 57] INFO  nextflow.processor.TaskProcessor - [e4/959b98] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr14)
+Jul-28 07:08:10.070 [Actor Thread 50] INFO  nextflow.processor.TaskProcessor - [e2/19a2a1] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr10)
+Jul-28 07:08:10.067 [Actor Thread 75] INFO  nextflow.processor.TaskProcessor - [01/786bcd] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr3)
+Jul-28 07:08:10.071 [Actor Thread 52] INFO  nextflow.processor.TaskProcessor - [92/57b2fe] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr11)
+Jul-28 07:08:10.071 [Actor Thread 66] INFO  nextflow.processor.TaskProcessor - [73/f82b51] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr19)
+Jul-28 07:08:10.067 [Actor Thread 84] INFO  nextflow.processor.TaskProcessor - [ba/ef1a28] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr7)
+Jul-28 07:08:10.067 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [2b/65530f] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr17)
+Jul-28 07:08:10.067 [Actor Thread 73] INFO  nextflow.processor.TaskProcessor - [cb/6cb4b5] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr22)
+Jul-28 07:08:10.069 [Actor Thread 86] INFO  nextflow.processor.TaskProcessor - [40/9e54f7] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr8)
+Jul-28 07:08:10.073 [Actor Thread 79] INFO  nextflow.processor.TaskProcessor - [4e/f5d4ba] Cached process > REALIGNMENT:ADD_READ_GROUPS (chr5)
+Jul-28 07:08:10.110 [Actor Thread 100] DEBUG nextflow.conda.CondaCache - conda found local env for environment=bioconda::gatk=3.8 bioconda::samtools=1.15.1; path=/home/iulia/pangenome_realignment/work/conda/env-faf9a1dc23420bbaeb92878fdd51d387
+Jul-28 07:08:10.267 [Actor Thread 111] DEBUG i.s.wave.plugin.config.WaveConfig - Wave strategy not specified - using default: [container, dockerfile, conda]
+Jul-28 07:08:10.282 [Actor Thread 111] DEBUG io.seqera.wave.plugin.WaveClient - Wave config: WaveConfig(enabled:true, endpoint:https://wave.seqera.io, containerConfigUrl:[], tokensCacheMaxDuration:30m, condaOpts:CondaOpts(mambaImage=mambaorg/micromamba:1.5.10-noble; basePackages=conda-forge::procps-ng, commands=null), strategy:[container, dockerfile, conda], bundleProjectResources:null, buildRepository:null, cacheRepository:null, retryOpts:RetryOpts(delay:450ms, maxDelay:1m 30s, maxAttempts:10, jitter:0.25), httpClientOpts:HttpOpts(), freezeMode:true, preserveFileTimestamp:null, buildMaxDuration:40m, mirrorMode:null, scanMode:null, scanAllowedLevels:null)
+Jul-28 07:08:10.602 [Actor Thread 111] DEBUG io.seqera.wave.plugin.WaveClient - Request limiter blocked PT0.001S
+Jul-28 07:08:10.625 [Actor Thread 111] DEBUG io.seqera.wave.plugin.WaveClient - Wave request: https://wave.seqera.io/v1alpha2/container; attempt=1 - request: SubmitContainerTokenRequest(towerAccessToken:null, towerRefreshToken:null, towerWorkspaceId:null, towerEndpoint:https://api.cloud.seqera.io, containerImage:null, containerFile:null, containerConfig:ContainerConfig(), condaFile:null, containerPlatform:linux/amd64, buildRepository:null, cacheRepository:null, timestamp:2025-07-28T07:08:10.600605847+03:00, fingerprint:8bf6a2a5e196644d958896de6a8e13b5, freeze:true, format:null, dryRun:false, workflowId:null, containerIncludes:null, packages:PackagesSpec{type=CONDA, envFile='null', packages=[bioconda::gatk=3.8, bioconda::samtools=1.15.1], condaOpts=CondaOpts(mambaImage=mambaorg/micromamba:1.5.10-noble; basePackages=conda-forge::procps-ng, commands=null), channels=conda-forge,bioconda,defaults}, nameStrategy:null, mirror:false, scanMode:null, scanLevels:null)
+Jul-28 07:08:11.316 [Actor Thread 111] DEBUG io.seqera.wave.plugin.WaveClient - Wave response: statusCode=200; body={"requestId":"82ff011044a4","targetImage":"community.wave.seqera.io/library/gatk_samtools:d194d75f0d79a388","containerImage":"community.wave.seqera.io/library/gatk_samtools:d194d75f0d79a388","buildId":"bd-d194d75f0d79a388_1","cached":true,"freeze":true,"mirror":false,"scanId":"sc-5ff59a294128a624_1"}
+Jul-28 07:08:11.489 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:11.572 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:11.576 [Task submitter] INFO  nextflow.Session - [fb/c4b34b] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr21)
+Jul-28 07:08:11.634 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:11.649 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:11.650 [Task submitter] INFO  nextflow.Session - [e5/fbe3c9] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr15)
+Jul-28 07:08:11.700 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:11.714 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:11.715 [Task submitter] INFO  nextflow.Session - [e2/d796b8] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr17)
+Jul-28 07:08:11.763 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:11.775 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:11.776 [Task submitter] INFO  nextflow.Session - [21/a4a08d] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr22)
+Jul-28 07:08:11.828 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:11.841 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:11.843 [Task submitter] INFO  nextflow.Session - [d1/db24fb] Submitted process > REALIGNMENT:BAMLEFTALIGN (chrX)
+Jul-28 07:08:11.893 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:11.905 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:11.907 [Task submitter] INFO  nextflow.Session - [c0/aae557] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr3)
+Jul-28 07:08:11.958 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:11.972 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:11.973 [Task submitter] INFO  nextflow.Session - [46/e35680] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr12)
+Jul-28 07:08:12.033 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.050 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.052 [Task submitter] INFO  nextflow.Session - [df/6020db] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr6)
+Jul-28 07:08:12.106 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.120 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.122 [Task submitter] INFO  nextflow.Session - [95/85b8f2] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr7)
+Jul-28 07:08:12.173 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.188 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.189 [Task submitter] INFO  nextflow.Session - [87/2feb80] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr4)
+Jul-28 07:08:12.240 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.255 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.257 [Task submitter] INFO  nextflow.Session - [b8/eb99dc] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr11)
+Jul-28 07:08:12.309 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.321 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.323 [Task submitter] INFO  nextflow.Session - [65/a4d5e4] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr8)
+Jul-28 07:08:12.373 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.384 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.385 [Task submitter] INFO  nextflow.Session - [59/814d5d] Submitted process > REALIGNMENT:BAMLEFTALIGN (chrY)
+Jul-28 07:08:12.434 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.444 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.445 [Task submitter] INFO  nextflow.Session - [5c/064b11] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr14)
+Jul-28 07:08:12.500 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.510 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.512 [Task submitter] INFO  nextflow.Session - [09/e1f6ac] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr2)
+Jul-28 07:08:12.562 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.573 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.574 [Task submitter] INFO  nextflow.Session - [7e/2da4ef] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr5)
+Jul-28 07:08:12.623 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.632 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.633 [Task submitter] INFO  nextflow.Session - [20/83338a] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr20)
+Jul-28 07:08:12.684 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.694 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.695 [Task submitter] INFO  nextflow.Session - [6a/d2e5d4] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr16)
+Jul-28 07:08:12.746 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.757 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.758 [Task submitter] INFO  nextflow.Session - [de/f53ce3] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr18)
+Jul-28 07:08:12.812 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.823 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.825 [Task submitter] INFO  nextflow.Session - [cd/187cfa] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr1)
+Jul-28 07:08:12.877 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.889 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.890 [Task submitter] INFO  nextflow.Session - [5e/833306] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr13)
+Jul-28 07:08:12.942 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:12.952 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:12.953 [Task submitter] INFO  nextflow.Session - [8d/534e1d] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr9)
+Jul-28 07:08:13.005 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:13.014 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:13.015 [Task submitter] INFO  nextflow.Session - [bc/9f4bac] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr10)
+Jul-28 07:08:13.066 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"82ff011044a4","status":"DONE","buildId":"bd-d194d75f0d79a388_1","scanId":"sc-5ff59a294128a624_1","succeeded":true,"creationTime":"2025-07-27T17:42:58.951000304Z","duration":155.404189601}
+Jul-28 07:08:13.076 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:08:13.078 [Task submitter] INFO  nextflow.Session - [fa/c0d3b2] Submitted process > REALIGNMENT:BAMLEFTALIGN (chr19)
+Jul-28 07:09:59.914 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: REALIGNMENT:BAMLEFTALIGN (chrY); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/59/814d5d527f48054d7606341a33c86b]
+Jul-28 07:09:59.917 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=384; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Jul-28 07:09:59.962 [Actor Thread 84] INFO  nextflow.conda.CondaCache - Creating env using conda: bioconda::gatk=3.8 [cache /home/iulia/pangenome_realignment/work/conda/env-1c6f1c4c9f63693bc0705e74469e1e59]
+Jul-28 07:10:49.638 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: REALIGNMENT:BAMLEFTALIGN (chr22); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/21/a4a08d43a32a004523fad771ac54a7]
+Jul-28 07:10:59.519 [Actor Thread 84] DEBUG nextflow.conda.CondaCache - 'conda' create complete env=bioconda::gatk=3.8 path=/home/iulia/pangenome_realignment/work/conda/env-1c6f1c4c9f63693bc0705e74469e1e59
+Jul-28 07:10:59.533 [Actor Thread 60] DEBUG io.seqera.wave.plugin.WaveClient - Wave request: https://wave.seqera.io/v1alpha2/container; attempt=1 - request: SubmitContainerTokenRequest(towerAccessToken:null, towerRefreshToken:null, towerWorkspaceId:null, towerEndpoint:https://api.cloud.seqera.io, containerImage:null, containerFile:null, containerConfig:ContainerConfig(), condaFile:null, containerPlatform:linux/amd64, buildRepository:null, cacheRepository:null, timestamp:2025-07-28T07:10:59.531830594+03:00, fingerprint:2b1dc98456fd883cb086cfc6f0b18c5b, freeze:true, format:null, dryRun:false, workflowId:null, containerIncludes:null, packages:PackagesSpec{type=CONDA, envFile='null', packages=[bioconda::gatk=3.8], condaOpts=CondaOpts(mambaImage=mambaorg/micromamba:1.5.10-noble; basePackages=conda-forge::procps-ng, commands=null), channels=conda-forge,bioconda,defaults}, nameStrategy:null, mirror:false, scanMode:null, scanLevels:null)
+Jul-28 07:10:59.886 [Actor Thread 60] DEBUG io.seqera.wave.plugin.WaveClient - Wave response: statusCode=200; body={"requestId":"cd01dfa37856","targetImage":"community.wave.seqera.io/library/gatk:3.8--65d36f2f828b1c98","containerImage":"community.wave.seqera.io/library/gatk:3.8--65d36f2f828b1c98","buildId":"bd-65d36f2f828b1c98_1","cached":true,"freeze":true,"mirror":false,"scanId":"sc-0c8da12307074131_1"}
+Jul-28 07:10:59.944 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:10:59.951 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:10:59.952 [Task submitter] INFO  nextflow.Session - [0b/239415] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chrY)
+Jul-28 07:11:00.005 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:11:00.014 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:11:00.015 [Task submitter] INFO  nextflow.Session - [b0/74d8ac] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr22)
+Jul-28 07:11:20.562 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: REALIGNMENT:BAMLEFTALIGN (chr21); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e]
+Jul-28 07:11:20.736 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:11:20.750 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:11:20.751 [Task submitter] INFO  nextflow.Session - [3f/d030ac] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr21)
+Jul-28 07:11:42.660 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 32; name: REALIGNMENT:BAMLEFTALIGN (chr19); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/fa/c0d3b235f9ca36d2a0f560e5859723]
+Jul-28 07:11:42.860 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:11:42.871 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:11:42.872 [Task submitter] INFO  nextflow.Session - [79/9e607b] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr19)
+Jul-28 07:12:21.693 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 31; name: REALIGNMENT:BAMLEFTALIGN (chr20); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/20/83338a826d6a565c7cfd6b9f417d8a]
+Jul-28 07:12:21.908 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:12:21.922 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:12:21.924 [Task submitter] INFO  nextflow.Session - [a2/b5f958] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr20)
+Jul-28 07:12:34.024 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 45; name: REALIGNMENT:BAMLEFTALIGN (chrX); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/d1/db24fb9e877d9a242e544fe0fdd95f]
+Jul-28 07:12:34.189 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:12:34.207 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:12:34.209 [Task submitter] INFO  nextflow.Session - [60/12b143] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chrX)
+Jul-28 07:12:44.213 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: REALIGNMENT:BAMLEFTALIGN (chr18); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/de/f53ce3888ef25701a52d8e489fede9]
+Jul-28 07:12:44.378 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:12:44.388 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:12:44.390 [Task submitter] INFO  nextflow.Session - [06/dd5814] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr18)
+Jul-28 07:13:09.223 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 24 -- submitted tasks are shown below
+~> TaskHandler[id: 48; name: REALIGNMENT:BAMLEFTALIGN (chr15); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/e5/fbe3c9cba2ea943a461688a3703ad7]
+~> TaskHandler[id: 30; name: REALIGNMENT:BAMLEFTALIGN (chr17); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/e2/d796b888cfb2656a45b4df4f4d2476]
+~> TaskHandler[id: 35; name: REALIGNMENT:BAMLEFTALIGN (chr3); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/c0/aae55756c9d32c6432447222dcff5f]
+~> TaskHandler[id: 47; name: REALIGNMENT:BAMLEFTALIGN (chr12); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/46/e35680a25752c8919cb89fd596fa54]
+~> TaskHandler[id: 41; name: REALIGNMENT:BAMLEFTALIGN (chr6); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/df/6020dbba7432e4fe7c8c51c4311003]
+~> TaskHandler[id: 33; name: REALIGNMENT:BAMLEFTALIGN (chr7); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/95/85b8f29744e77f3d8292dc4c6eb8c7]
+~> TaskHandler[id: 46; name: REALIGNMENT:BAMLEFTALIGN (chr4); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/87/2feb8021abec96e16519be8b66923b]
+~> TaskHandler[id: 34; name: REALIGNMENT:BAMLEFTALIGN (chr11); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/b8/eb99dc12efd9859f9f016dfaafccdc]
+~> TaskHandler[id: 27; name: REALIGNMENT:BAMLEFTALIGN (chr8); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/65/a4d5e49a6bd095efd61aa9cc992fc7]
+~> TaskHandler[id: 39; name: REALIGNMENT:BAMLEFTALIGN (chr14); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/5c/064b1185953acf0b20f3f5a061f817]
+.. remaining tasks omitted.
+Jul-28 07:13:11.682 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 48; name: REALIGNMENT:BAMLEFTALIGN (chr15); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/e5/fbe3c9cba2ea943a461688a3703ad7]
+Jul-28 07:13:11.881 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:13:11.899 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:13:11.901 [Task submitter] INFO  nextflow.Session - [f9/da1c85] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr15)
+Jul-28 07:13:18.310 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 30; name: REALIGNMENT:BAMLEFTALIGN (chr17); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/e2/d796b888cfb2656a45b4df4f4d2476]
+Jul-28 07:13:18.396 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:13:18.413 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:13:18.414 [Task submitter] INFO  nextflow.Session - [2a/0174b4] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr17)
+Jul-28 07:13:25.260 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 39; name: REALIGNMENT:BAMLEFTALIGN (chr14); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/5c/064b1185953acf0b20f3f5a061f817]
+Jul-28 07:13:25.331 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:13:25.341 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:13:25.342 [Task submitter] INFO  nextflow.Session - [80/fcb500] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr14)
+Jul-28 07:13:35.355 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 43; name: REALIGNMENT:BAMLEFTALIGN (chr16); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/6a/d2e5d4bab17a537ba3b7d2cb666d1e]
+Jul-28 07:13:35.511 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:13:35.523 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:13:35.524 [Task submitter] INFO  nextflow.Session - [4a/5abc22] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr16)
+Jul-28 07:14:04.755 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 42; name: REALIGNMENT:BAMLEFTALIGN (chr13); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/5e/8333061e7f90892088c01bbd2982d0]
+Jul-28 07:14:04.974 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:14:04.997 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:14:05.001 [Task submitter] INFO  nextflow.Session - [da/d7933d] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr13)
+Jul-28 07:14:58.283 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 44; name: REALIGNMENT:BAMLEFTALIGN (chr9); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/8d/534e1deb299364c27a921c6f4dd176]
+Jul-28 07:14:58.477 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:14:58.491 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:14:58.493 [Task submitter] INFO  nextflow.Session - [7b/a43290] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr9)
+Jul-28 07:15:45.999 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 34; name: REALIGNMENT:BAMLEFTALIGN (chr11); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/b8/eb99dc12efd9859f9f016dfaafccdc]
+Jul-28 07:15:46.215 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:15:46.231 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:15:46.235 [Task submitter] INFO  nextflow.Session - [6e/f416bd] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr11)
+Jul-28 07:16:00.269 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: REALIGNMENT:BAMLEFTALIGN (chr8); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/65/a4d5e49a6bd095efd61aa9cc992fc7]
+Jul-28 07:16:00.437 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:16:00.448 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:16:00.449 [Task submitter] INFO  nextflow.Session - [6f/77cdbf] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr8)
+Jul-28 07:16:03.897 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 38; name: REALIGNMENT:BAMLEFTALIGN (chr10); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/bc/9f4bac56a4330bb5949b79dff7d876]
+Jul-28 07:16:03.974 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:16:04.000 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:16:04.002 [Task submitter] INFO  nextflow.Session - [ba/00f6dc] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr10)
+Jul-28 07:16:16.671 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 47; name: REALIGNMENT:BAMLEFTALIGN (chr12); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/46/e35680a25752c8919cb89fd596fa54]
+Jul-28 07:16:16.864 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:16:16.878 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:16:16.879 [Task submitter] INFO  nextflow.Session - [6f/81c594] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr12)
+Jul-28 07:16:47.059 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 33; name: REALIGNMENT:BAMLEFTALIGN (chr7); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/95/85b8f29744e77f3d8292dc4c6eb8c7]
+Jul-28 07:16:47.260 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:16:47.275 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:16:47.276 [Task submitter] INFO  nextflow.Session - [c1/0f9a95] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr7)
+Jul-28 07:17:35.038 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 41; name: REALIGNMENT:BAMLEFTALIGN (chr6); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/df/6020dbba7432e4fe7c8c51c4311003]
+Jul-28 07:17:35.233 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:17:35.249 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:17:35.251 [Task submitter] INFO  nextflow.Session - [54/474d12] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr6)
+Jul-28 07:18:06.644 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 49; name: REALIGNMENT:BAMLEFTALIGN (chr5); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/7e/2da4efe07dfcb741138afcc26541c5]
+Jul-28 07:18:06.863 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:18:06.875 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:18:06.876 [Task submitter] INFO  nextflow.Session - [1c/bed26f] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr5)
+Jul-28 07:18:09.250 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 24 -- submitted tasks are shown below
+~> TaskHandler[id: 35; name: REALIGNMENT:BAMLEFTALIGN (chr3); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/c0/aae55756c9d32c6432447222dcff5f]
+~> TaskHandler[id: 46; name: REALIGNMENT:BAMLEFTALIGN (chr4); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/87/2feb8021abec96e16519be8b66923b]
+~> TaskHandler[id: 36; name: REALIGNMENT:BAMLEFTALIGN (chr2); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/09/e1f6ac21020fc7fd2f8420fef11618]
+~> TaskHandler[id: 40; name: REALIGNMENT:BAMLEFTALIGN (chr1); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/cd/187cfa2c19f28bd4f6800333d9b5d5]
+~> TaskHandler[id: 50; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chrY); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/0b/23941592294199bab184b9ccc69359]
+~> TaskHandler[id: 51; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/b0/74d8ac2d28be65a385ef02464a1b26]
+~> TaskHandler[id: 52; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr21); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/3f/d030acb6b8f97e0d3085e4185830f2]
+~> TaskHandler[id: 53; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr19); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/79/9e607bb4ba3d08804d7b5d37347359]
+~> TaskHandler[id: 54; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr20); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/a2/b5f95825fadbccf7b502030259e198]
+~> TaskHandler[id: 55; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chrX); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/60/12b1438c14627bddfdb8568b2d4241]
+.. remaining tasks omitted.
+Jul-28 07:18:50.643 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 46; name: REALIGNMENT:BAMLEFTALIGN (chr4); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/87/2feb8021abec96e16519be8b66923b]
+Jul-28 07:18:50.854 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:18:50.871 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:18:50.872 [Task submitter] INFO  nextflow.Session - [47/8d0ec4] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr4)
+Jul-28 07:19:30.244 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 35; name: REALIGNMENT:BAMLEFTALIGN (chr3); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/c0/aae55756c9d32c6432447222dcff5f]
+Jul-28 07:19:30.459 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:19:30.475 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:19:30.476 [Task submitter] INFO  nextflow.Session - [4f/666b9a] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr3)
+Jul-28 07:21:34.908 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 36; name: REALIGNMENT:BAMLEFTALIGN (chr2); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/09/e1f6ac21020fc7fd2f8420fef11618]
+Jul-28 07:21:35.269 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:21:35.281 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:21:35.282 [Task submitter] INFO  nextflow.Session - [13/f68820] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr2)
+Jul-28 07:23:03.329 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 40; name: REALIGNMENT:BAMLEFTALIGN (chr1); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/cd/187cfa2c19f28bd4f6800333d9b5d5]
+Jul-28 07:23:03.549 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"cd01dfa37856","status":"DONE","buildId":"bd-65d36f2f828b1c98_1","scanId":"sc-0c8da12307074131_1","succeeded":true,"creationTime":"2025-07-24T11:05:45.783637669Z","duration":208.947528629}
+Jul-28 07:23:03.560 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:23:03.563 [Task submitter] INFO  nextflow.Session - [6d/d4a598] Submitted process > REALIGNMENT:REALIGNER_TARGET_CREATOR (chr1)
+Jul-28 07:23:04.324 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 50; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chrY); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/0b/23941592294199bab184b9ccc69359]
+Jul-28 07:23:04.363 [Actor Thread 84] INFO  nextflow.conda.CondaCache - Creating env using conda: bioconda::bedtools=2.30.0 [cache /home/iulia/pangenome_realignment/work/conda/env-8dafdac3843d8f8edf2f9907029bda58]
+Jul-28 07:23:09.344 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 23 -- submitted tasks are shown below
+~> TaskHandler[id: 51; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/b0/74d8ac2d28be65a385ef02464a1b26]
+~> TaskHandler[id: 52; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr21); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/3f/d030acb6b8f97e0d3085e4185830f2]
+~> TaskHandler[id: 53; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr19); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/79/9e607bb4ba3d08804d7b5d37347359]
+~> TaskHandler[id: 54; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr20); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/a2/b5f95825fadbccf7b502030259e198]
+~> TaskHandler[id: 55; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chrX); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/60/12b1438c14627bddfdb8568b2d4241]
+~> TaskHandler[id: 56; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr18); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/06/dd5814983a361a28df1a4c232d2db2]
+~> TaskHandler[id: 57; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr15); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/f9/da1c8565d56a9bd25388551ced7320]
+~> TaskHandler[id: 58; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr17); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/2a/0174b4f91aed42762b5c09209c5c60]
+~> TaskHandler[id: 59; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr14); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/80/fcb500e62593b613b1c79cb2f38ce5]
+~> TaskHandler[id: 60; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr16); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/4a/5abc22856134d0cc05e625e3895352]
+.. remaining tasks omitted.
+Jul-28 07:23:18.560 [Actor Thread 84] DEBUG nextflow.conda.CondaCache - 'conda' create complete env=bioconda::bedtools=2.30.0 path=/home/iulia/pangenome_realignment/work/conda/env-8dafdac3843d8f8edf2f9907029bda58
+Jul-28 07:23:18.575 [Actor Thread 60] DEBUG io.seqera.wave.plugin.WaveClient - Wave request: https://wave.seqera.io/v1alpha2/container; attempt=1 - request: SubmitContainerTokenRequest(towerAccessToken:null, towerRefreshToken:null, towerWorkspaceId:null, towerEndpoint:https://api.cloud.seqera.io, containerImage:null, containerFile:null, containerConfig:ContainerConfig(), condaFile:null, containerPlatform:linux/amd64, buildRepository:null, cacheRepository:null, timestamp:2025-07-28T07:23:18.573567549+03:00, fingerprint:153e1bb02ad05143cccb2e1b45941a08, freeze:true, format:null, dryRun:false, workflowId:null, containerIncludes:null, packages:PackagesSpec{type=CONDA, envFile='null', packages=[bioconda::bedtools=2.30.0], condaOpts=CondaOpts(mambaImage=mambaorg/micromamba:1.5.10-noble; basePackages=conda-forge::procps-ng, commands=null), channels=conda-forge,bioconda,defaults}, nameStrategy:null, mirror:false, scanMode:null, scanLevels:null)
+Jul-28 07:23:18.887 [Actor Thread 60] DEBUG io.seqera.wave.plugin.WaveClient - Wave response: statusCode=200; body={"requestId":"02e32ba78392","targetImage":"community.wave.seqera.io/library/bedtools:2.30.0--0115307a1d2743b1","containerImage":"community.wave.seqera.io/library/bedtools:2.30.0--0115307a1d2743b1","buildId":"bd-0115307a1d2743b1_1","cached":true,"freeze":true,"mirror":false,"scanId":"sc-4aa9fb83ab69552b_1"}
+Jul-28 07:23:18.940 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"02e32ba78392","status":"DONE","buildId":"bd-0115307a1d2743b1_1","scanId":"sc-4aa9fb83ab69552b_1","succeeded":true,"creationTime":"2025-07-27T15:12:45.741589427Z","duration":68.836542556}
+Jul-28 07:23:18.948 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:23:18.950 [Task submitter] INFO  nextflow.Session - [7a/bf837e] Submitted process > REALIGNMENT:EXPAND_REGIONS (chrY)
+Jul-28 07:23:21.394 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 74; name: REALIGNMENT:EXPAND_REGIONS (chrY); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/7a/bf837e84f30df6f4f449fbcb3804ba]
+Jul-28 07:23:21.418 [Actor Thread 60] INFO  nextflow.conda.CondaCache - Creating env using conda: bioconda::abra2=2.23 [cache /home/iulia/pangenome_realignment/work/conda/env-1cb2654b7fac4ecf1d3bfbbd26bc135a]
+Jul-28 07:23:36.870 [Actor Thread 60] DEBUG nextflow.conda.CondaCache - 'conda' create complete env=bioconda::abra2=2.23 path=/home/iulia/pangenome_realignment/work/conda/env-1cb2654b7fac4ecf1d3bfbbd26bc135a
+Jul-28 07:23:36.879 [Actor Thread 126] DEBUG io.seqera.wave.plugin.WaveClient - Wave request: https://wave.seqera.io/v1alpha2/container; attempt=1 - request: SubmitContainerTokenRequest(towerAccessToken:null, towerRefreshToken:null, towerWorkspaceId:null, towerEndpoint:https://api.cloud.seqera.io, containerImage:null, containerFile:null, containerConfig:ContainerConfig(), condaFile:null, containerPlatform:linux/amd64, buildRepository:null, cacheRepository:null, timestamp:2025-07-28T07:23:36.878372550+03:00, fingerprint:acedf340f8d615ed81dce7f7aac13cfe, freeze:true, format:null, dryRun:false, workflowId:null, containerIncludes:null, packages:PackagesSpec{type=CONDA, envFile='null', packages=[bioconda::abra2=2.23], condaOpts=CondaOpts(mambaImage=mambaorg/micromamba:1.5.10-noble; basePackages=conda-forge::procps-ng, commands=null), channels=conda-forge,bioconda,defaults}, nameStrategy:null, mirror:false, scanMode:null, scanLevels:null)
+Jul-28 07:23:37.239 [Actor Thread 126] DEBUG io.seqera.wave.plugin.WaveClient - Wave response: statusCode=200; body={"requestId":"ef85b4173f75","targetImage":"community.wave.seqera.io/library/abra2:2.23--06650172a6b280ae","containerImage":"community.wave.seqera.io/library/abra2:2.23--06650172a6b280ae","buildId":"bd-06650172a6b280ae_1","cached":true,"freeze":true,"mirror":false,"scanId":"sc-857a1384fce2ee34_1"}
+Jul-28 07:23:37.299 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:23:37.307 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:23:37.308 [Task submitter] INFO  nextflow.Session - [ff/348b82] Submitted process > REALIGNMENT:ABRA_REALIGNMENT (chrY)
+Jul-28 07:23:45.393 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 75; name: REALIGNMENT:ABRA_REALIGNMENT (chrY); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/ff/348b82b93b5a49a8f44a77424451d1]
+Jul-28 07:28:09.400 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 23 -- submitted tasks are shown below
+~> TaskHandler[id: 51; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/b0/74d8ac2d28be65a385ef02464a1b26]
+~> TaskHandler[id: 52; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr21); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/3f/d030acb6b8f97e0d3085e4185830f2]
+~> TaskHandler[id: 53; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr19); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/79/9e607bb4ba3d08804d7b5d37347359]
+~> TaskHandler[id: 54; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr20); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/a2/b5f95825fadbccf7b502030259e198]
+~> TaskHandler[id: 55; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chrX); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/60/12b1438c14627bddfdb8568b2d4241]
+~> TaskHandler[id: 56; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr18); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/06/dd5814983a361a28df1a4c232d2db2]
+~> TaskHandler[id: 57; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr15); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/f9/da1c8565d56a9bd25388551ced7320]
+~> TaskHandler[id: 58; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr17); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/2a/0174b4f91aed42762b5c09209c5c60]
+~> TaskHandler[id: 59; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr14); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/80/fcb500e62593b613b1c79cb2f38ce5]
+~> TaskHandler[id: 60; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr16); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/4a/5abc22856134d0cc05e625e3895352]
+.. remaining tasks omitted.
+Jul-28 07:32:43.555 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 52; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr21); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/3f/d030acb6b8f97e0d3085e4185830f2]
+Jul-28 07:32:43.767 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"02e32ba78392","status":"DONE","buildId":"bd-0115307a1d2743b1_1","scanId":"sc-4aa9fb83ab69552b_1","succeeded":true,"creationTime":"2025-07-27T15:12:45.741589427Z","duration":68.836542556}
+Jul-28 07:32:43.776 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:32:43.778 [Task submitter] INFO  nextflow.Session - [32/e8ec70] Submitted process > REALIGNMENT:EXPAND_REGIONS (chr21)
+Jul-28 07:32:46.647 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 76; name: REALIGNMENT:EXPAND_REGIONS (chr21); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/32/e8ec708898291dedbc260fe3a7f6be]
+Jul-28 07:32:46.744 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:32:46.825 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:32:46.826 [Task submitter] INFO  nextflow.Session - [f9/8be155] Submitted process > REALIGNMENT:ABRA_REALIGNMENT (chr21)
+Jul-28 07:33:09.428 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 23 -- submitted tasks are shown below
+~> TaskHandler[id: 51; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr22); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/b0/74d8ac2d28be65a385ef02464a1b26]
+~> TaskHandler[id: 53; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr19); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/79/9e607bb4ba3d08804d7b5d37347359]
+~> TaskHandler[id: 54; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr20); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/a2/b5f95825fadbccf7b502030259e198]
+~> TaskHandler[id: 55; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chrX); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/60/12b1438c14627bddfdb8568b2d4241]
+~> TaskHandler[id: 56; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr18); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/06/dd5814983a361a28df1a4c232d2db2]
+~> TaskHandler[id: 57; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr15); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/f9/da1c8565d56a9bd25388551ced7320]
+~> TaskHandler[id: 58; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr17); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/2a/0174b4f91aed42762b5c09209c5c60]
+~> TaskHandler[id: 59; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr14); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/80/fcb500e62593b613b1c79cb2f38ce5]
+~> TaskHandler[id: 60; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr16); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/4a/5abc22856134d0cc05e625e3895352]
+~> TaskHandler[id: 61; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr13); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/da/d7933d2560b7e276f03ce06e46fb58]
+.. remaining tasks omitted.
+Jul-28 07:33:22.872 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 51; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr22); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/b0/74d8ac2d28be65a385ef02464a1b26]
+Jul-28 07:33:23.091 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"02e32ba78392","status":"DONE","buildId":"bd-0115307a1d2743b1_1","scanId":"sc-4aa9fb83ab69552b_1","succeeded":true,"creationTime":"2025-07-27T15:12:45.741589427Z","duration":68.836542556}
+Jul-28 07:33:23.101 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:33:23.103 [Task submitter] INFO  nextflow.Session - [c3/01ac7e] Submitted process > REALIGNMENT:EXPAND_REGIONS (chr22)
+Jul-28 07:33:26.000 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 78; name: REALIGNMENT:EXPAND_REGIONS (chr22); status: COMPLETED; exit: 0; error: -; workDir: /home/iulia/pangenome_realignment/work/c3/01ac7e6ef0c1845a5b257c3900d5ac]
+Jul-28 07:33:26.072 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:27.124 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:28.173 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:29.224 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:30.276 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:31.324 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:32.372 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:33.426 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:34.477 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:35.525 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:36.574 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:37.624 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:38.671 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:39.722 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:40.771 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:41.821 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:42.870 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:43.919 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:44.967 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:46.019 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:47.068 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:48.118 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:49.167 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:50.215 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:51.276 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:52.326 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:53.502 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:54.549 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:55.595 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:56.643 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:57.694 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:58.740 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:33:59.787 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:00.834 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:01.881 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:02.929 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:03.984 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:05.040 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:06.085 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:07.130 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:08.183 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:09.230 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:10.275 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:11.321 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:12.367 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:13.413 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:14.460 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:15.507 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:16.554 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:17.605 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:18.652 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:19.699 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:20.745 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:21.790 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:22.835 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:24.000 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:25.046 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:26.093 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:27.142 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:28.192 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:29.038 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 77; name: REALIGNMENT:ABRA_REALIGNMENT (chr21); status: COMPLETED; exit: 255; error: -; workDir: /home/iulia/pangenome_realignment/work/f9/8be155e390e43df19971d11d293f5a]
+Jul-28 07:34:29.054 [TaskFinalizer-2] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=REALIGNMENT:ABRA_REALIGNMENT (chr21); work-dir=/home/iulia/pangenome_realignment/work/f9/8be155e390e43df19971d11d293f5a
+  error [nextflow.exception.ProcessFailedException]: Process `REALIGNMENT:ABRA_REALIGNMENT (chr21)` terminated with an error exit status (255)
+Jul-28 07:34:29.085 [Task submitter] DEBUG io.seqera.wave.plugin.WaveClient - Wave container status response: statusCode=200; body={"id":"ef85b4173f75","status":"DONE","buildId":"bd-06650172a6b280ae_1","scanId":"sc-857a1384fce2ee34_1","succeeded":true,"creationTime":"2025-07-27T15:14:18.459757367Z","duration":123.939247215}
+Jul-28 07:34:29.094 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-28 07:34:29.098 [Task submitter] INFO  nextflow.Session - [56/98facd] Submitted process > REALIGNMENT:ABRA_REALIGNMENT (chr22)
+Jul-28 07:34:29.100 [TaskFinalizer-2] ERROR nextflow.processor.TaskProcessor - Error executing process > 'REALIGNMENT:ABRA_REALIGNMENT (chr21)'
+
+Caused by:
+  Process `REALIGNMENT:ABRA_REALIGNMENT (chr21)` terminated with an error exit status (255)
+
+
+Command executed:
+
+  echo "=== ABRA_REALIGNMENT for chr21 ==="
+  
+  # Skip ABRA for problematic chromosomes
+  if [[ "chr21" == "chrY" ]] || [[ "chr21" == "chrM" ]]; then
+      echo "Skipping ABRA for chr21 (known to cause issues), copying input"
+      cp chr21.leftaligned.bam chr21.realigned.bam
+  elif [ -s chr21.expanded.bed ]; then
+      echo "Running ABRA2 for chr21..."
+  
+      # Run ABRA with fallback
+      abra2 --in chr21.leftaligned.bam \
+            --out chr21.realigned.bam \
+            --ref GRCh38_no_alt_analysis_set.fasta \
+            --targets chr21.expanded.bed \
+            --threads 17 \
+            --tmpdir ./abra_tmp
+  
+      # If ABRA failed, copy input
+      if [ $? -ne 0 ] || [ ! -f "chr21.realigned.bam" ]; then
+          echo "ABRA failed for chr21, copying input BAM"
+          cp chr21.leftaligned.bam chr21.realigned.bam
+      fi
+  
+      # Clean up
+      rm -rf ./abra_tmp
+  else
+      echo "No target regions for chr21, copying input BAM"
+      cp chr21.leftaligned.bam chr21.realigned.bam
+  fi
+  
+  # Index the realigned BAM
+  samtools index chr21.realigned.bam
+
+Command exit status:
+  255
+
+Command output:
+  === ABRA_REALIGNMENT for chr21 ===
+  Running ABRA2 for chr21...
+
+Command error:
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Processing chromosome chunk: chrX_25000001_50000000
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Clock time in Chromosome: chr11_50000001_75000000: 0
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Processing chromosome chunk: chrX_50000001_75000000
+  WARNING	2025-07-28 07:34:28	SamFiles	The index file /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bai was found by resolving the canonical path of a symlink: chr21.leftaligned.bam -> /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bam
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Clock time in Chromosome: chr20_1_25000000: 0
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Processing chromosome chunk: chrX_75000001_100000000
+  WARNING	2025-07-28 07:34:28	SamFiles	The index file /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bai was found by resolving the canonical path of a symlink: chr21.leftaligned.bam -> /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bam
+  WARNING	2025-07-28 07:34:28	SamFiles	The index file /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bai was found by resolving the canonical path of a symlink: chr21.leftaligned.bam -> /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bam
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Clock time in Chromosome: chr19_1_25000000: 0
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Processing chromosome chunk: chrX_100000001_125000000
+  WARNING	2025-07-28 07:34:28	SamFiles	The index file /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bai was found by resolving the canonical path of a symlink: chr21.leftaligned.bam -> /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bam
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Clock time in Chromosome: chr14_1_25000000: 0
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Processing chromosome chunk: chrX_125000001_150000000
+  WARNING	2025-07-28 07:34:28	SamFiles	The index file /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bai was found by resolving the canonical path of a symlink: chr21.leftaligned.bam -> /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bam
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Clock time in Chromosome: chrX_125000001_150000000: 0
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Processing chromosome chunk: chrX_150000001_156040895
+  WARNING	2025-07-28 07:34:28	SamFiles	The index file /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bai was found by resolving the canonical path of a symlink: chr21.leftaligned.bam -> /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bam
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Clock time in Chromosome: chr22_50000001_50818468: 0
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Processing chromosome chunk: chrY_1_25000000
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Clock time in Chromosome: chrX_75000001_100000000: 0
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Processing chromosome chunk: chrY_25000001_50000000
+  WARNING	2025-07-28 07:34:28	SamFiles	The index file /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bai was found by resolving the canonical path of a symlink: chr21.leftaligned.bam -> /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bam
+  WARNING	2025-07-28 07:34:28	SamFiles	The index file /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bai was found by resolving the canonical path of a symlink: chr21.leftaligned.bam -> /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bam
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Clock time in Chromosome: chrX_50000001_75000000: 0
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Processing chromosome chunk: chrY_50000001_57227415
+  WARNING	2025-07-28 07:34:28	SamFiles	The index file /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bai was found by resolving the canonical path of a symlink: chr21.leftaligned.bam -> /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bam
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Clock time in Chromosome: chr13_25000001_50000000: 0
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Processing chromosome chunk: chrM_1_16569
+  WARNING	2025-07-28 07:34:28	SamFiles	The index file /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bai was found by resolving the canonical path of a symlink: chr21.leftaligned.bam -> /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bam
+  java.lang.IllegalArgumentException: Invalid reference index -1
+  	at htsjdk.samtools.QueryInterval.<init>(QueryInterval.java:24)
+  	at htsjdk.samtools.SamReader$PrimitiveSamReaderToSamReaderAdapter.query(SamReader.java:528)
+  	at htsjdk.samtools.SamReader$PrimitiveSamReaderToSamReaderAdapter.queryOverlapping(SamReader.java:390)
+  	at abra.MultiSamReader.<init>(MultiSamReader.java:40)
+  	at abra.ReAligner.processChromosomeChunk(ReAligner.java:262)
+  	at abra.ReAlignerRunnable.go(ReAlignerRunnable.java:21)
+  	at abra.AbraRunnable.run(AbraRunnable.java:20)
+  	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+  	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+  	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+  	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+  	at java.base/java.lang.Thread.run(Thread.java:1575)
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Clock time in Chromosome: chr15_25000001_50000000: 0
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Clock time in Chromosome: chr22_25000001_50000000: 0
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Processing chromosome chunk: chr1_KI270706v1_random_1_175055
+  INFO	Mon Jul 28 07:34:28 EEST 2025	Processing chromosome chunk: chr1_KI270707v1_random_1_32032
+  WARNING	2025-07-28 07:34:28	SamFiles	The index file /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bai was found by resolving the canonical path of a symlink: chr21.leftaligned.bam -> /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bam
+  WARNING	2025-07-28 07:34:28	SamFiles	The index file /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bai was found by resolving the canonical path of a symlink: chr21.leftaligned.bam -> /home/iulia/pangenome_realignment/work/fb/c4b34b660f060a260cded608334d7e/chr21.leftaligned.bam
+  java.lang.IllegalArgumentException: Invalid reference index -1
+  	at htsjdk.samtools.QueryInterval.<init>(QueryInterval.java:24)
+
+Work dir:
+  /home/iulia/pangenome_realignment/work/f9/8be155e390e43df19971d11d293f5a
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Jul-28 07:34:29.107 [TaskFinalizer-2] INFO  nextflow.Session - Execution cancelled -- Finishing pending tasks before exit
+Jul-28 07:34:29.128 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jul-28 07:34:39.307 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
+Jul-28 07:34:39.342 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jul-28 07:34:39.344 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jul-28 07:34:39.369 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (22)
+Jul-28 07:34:39.470 [main] DEBUG n.processor.TaskPollingMonitor - Failed to kill pending tasks: TaskHandler[id: 63; name: REALIGNMENT:REALIGNER_TARGET_CREATOR (chr11); status: RUNNING; exit: -; error: -; workDir: /home/iulia/pangenome_realignment/work/6e/f416bd68c5cb6a1b6801a623908d7c] -- cause: Cannot run program "bash": error=0, Failed to exec spawn helper: pid: 3416665, signal: 2
+Jul-28 07:34:39.557 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill REALIGNMENT:REALIGNER_TARGET_CREATOR (chr2) -- command: kill -TERM 227973; exit: 1 
+ bash: line 1: kill: (227973) - No such process
+
+Jul-28 07:34:39.590 [SIGINT handler] INFO  nextflow.Session - Adieu
+Jul-28 07:34:39.591 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill REALIGNMENT:ABRA_REALIGNMENT (chr22) -- command: kill -TERM 3349677; exit: 130 
+Jul-28 07:34:39.601 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=31; failedCount=1; ignoredCount=0; cachedCount=25; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=22; succeedDuration=12h 48m 19s; failedDuration=28m 57s; cachedDuration=1d 15h 18m 10s;loadCpus=0; loadMemory=0; peakRunning=24; peakCpus=96; peakMemory=420 GB; ]
+Jul-28 07:34:39.602 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Jul-28 07:34:39.605 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
